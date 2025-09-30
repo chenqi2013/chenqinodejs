@@ -76,6 +76,12 @@ pnpm run test
 # 测试数据库连接
 node test-db.js
 
+# 打开数据库可视化工具（推荐）
+./open-db-gui.sh
+
+# 或直接打开 TablePlus
+open -a TablePlus
+
 # 启动 PostgreSQL
 brew services start postgresql@15
 
@@ -88,7 +94,7 @@ brew services restart postgresql@15
 # 查看 PostgreSQL 状态
 brew services list | grep postgresql
 
-# 连接到数据库
+# 连接到数据库（命令行）
 psql chenqinodejs_db
 
 # 在 psql 中查看所有表
@@ -103,6 +109,22 @@ SELECT * FROM roles;
 # 退出 psql
 \q
 ```
+
+### 可视化工具（推荐）
+```bash
+# 打开 TablePlus（最推荐）
+open -a TablePlus
+
+# 或使用启动脚本选择工具
+./open-db-gui.sh
+```
+
+**TablePlus 连接信息：**
+- Host: localhost
+- Port: 5432
+- User: chenqi
+- Password: （留空）
+- Database: chenqinodejs_db
 
 ### PM2 进程管理（生产环境）
 ```bash
