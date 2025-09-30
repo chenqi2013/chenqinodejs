@@ -95,6 +95,33 @@ curl -X POST http://localhost:3000/api/v1/users/USER1/reset-usage
 
 **详细文档**: 查看 `SCAN_API_DOCUMENTATION.md`
 
+### 版本更新接口 🆕
+
+#### 1. 检查版本更新
+```bash
+curl "http://localhost:3000/api/v1/version/check?currentVersion=1.0.0&platform=android"
+```
+
+#### 2. 创建新版本
+```bash
+curl -X POST http://localhost:3000/api/v1/version \
+  -H "Content-Type: application/json" \
+  -d '{
+    "version": "2.0.0",
+    "platform": "android",
+    "updateContent": "1. 全新UI\n2. 性能优化",
+    "downloadUrl": "https://example.com/app-2.0.0.apk",
+    "forceUpdate": true
+  }'
+```
+
+#### 3. 获取最新版本
+```bash
+curl http://localhost:3000/api/v1/version/latest/android
+```
+
+**详细文档**: 查看 `VERSION_API_DOCUMENTATION.md`
+
 ## 🔧 常用命令
 
 ### 应用管理
