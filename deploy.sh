@@ -21,6 +21,14 @@ pnpm install --frozen-lockfile
 echo "🔨 构建应用..."
 pnpm run build
 
+# 测试数据库连接
+echo "🗄️ 测试数据库连接..."
+node test-db.js
+
+# 运行数据库迁移（如果需要）
+echo "📊 运行数据库迁移..."
+pnpm run db:migrate 2>/dev/null || echo "⚠️  迁移失败或已存在，继续部署..."
+
 # 检查 PM2 是否安装
 if ! command -v pm2 &> /dev/null; then
     echo "📦 安装 PM2..."

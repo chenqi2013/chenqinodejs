@@ -25,14 +25,23 @@
     "pm2:logs": "pm2 logs chenqinodejs-api",
     "docker:build": "docker build -t chenqinodejs-api .",
     "docker:run": "docker run -d -p 3000:3000 --name chenqinodejs-api chenqinodejs-api",
-    "docker:compose": "docker-compose up -d"
+    "docker:compose": "docker-compose up -d",
+    "db:migrate": "typeorm migration:run -d dist/config/database.config.js",
+    "db:migrate:revert": "typeorm migration:revert -d dist/config/database.config.js",
+    "db:generate": "typeorm migration:generate -d dist/config/database.config.js",
+    "db:create": "typeorm database:create",
+    "db:drop": "typeorm database:drop"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/typeorm": "^11.0.0",
+    "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "typeorm": "^0.3.27"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -43,6 +52,7 @@
     "@types/express": "^5.0.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^22.10.7",
+    "@types/pg": "^8.15.5",
     "@types/supertest": "^6.0.2",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
