@@ -1,0 +1,16 @@
+{
+  "name": "chenqinodejs",
+  "region": "hkg1",
+  "build": {
+    "buildCommand": "pnpm install && pnpm run build",
+    "installCommand": "pnpm install"
+  },
+  "run": {
+    "startCommand": "pnpm run start:prod"
+  },
+  "port": 3000,
+  "envVars": {
+    "NODE_ENV": "production",
+    "PORT": "3000"
+  }
+}

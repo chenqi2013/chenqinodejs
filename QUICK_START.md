@@ -122,6 +122,37 @@ curl http://localhost:3000/api/v1/version/latest/android
 
 **详细文档**: 查看 `VERSION_API_DOCUMENTATION.md`
 
+## 🚀 免费部署
+
+### 推荐的免费平台
+
+#### 1️⃣ Railway.app（最推荐）
+- ✅ 不会休眠
+- ✅ $5/月免费额度
+- ✅ 部署快速
+
+**查看详细教程**：`DEPLOY_TO_RAILWAY.md`
+
+```bash
+# 快速部署
+npm install -g @railway/cli
+railway login
+railway init
+railway up
+```
+
+#### 2️⃣ Render.com（简单易用）
+- ✅ 完全免费
+- ✅ 自动 HTTPS
+- ✅ 零配置
+
+**查看详细教程**：`DEPLOY_TO_RENDER.md`
+
+#### 📊 平台对比
+查看 `FREE_HOSTING_COMPARISON.md` 了解详细对比
+
+---
+
 ## 🔧 常用命令
 
 ### 应用管理
