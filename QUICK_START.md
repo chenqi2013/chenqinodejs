@@ -17,7 +17,9 @@
 
 ## 🎯 可用的 API 接口
 
-### 1. 获取所有角色
+### 角色管理接口
+
+#### 1. 获取所有角色
 ```bash
 curl http://localhost:3000/api/v1/role
 ```
@@ -49,10 +51,49 @@ curl -X PUT http://localhost:3000/api/v1/role/1 \
   }'
 ```
 
-### 5. 删除角色
+#### 5. 删除角色
 ```bash
 curl -X DELETE http://localhost:3000/api/v1/role/1
 ```
+
+### 扫码功能接口 🆕
+
+#### 1. 扫描二维码增加使用次数
+```bash
+curl -X POST http://localhost:3000/api/v1/scan/qrcode \
+  -H "Content-Type: application/json" \
+  -d '{
+    "scannerDeviceId":"USER2",
+    "scannedDeviceId":"USER1"
+  }'
+```
+
+#### 2. 创建用户
+```bash
+curl -X POST http://localhost:3000/api/v1/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "deviceId":"USER1",
+    "nickname":"张三"
+  }'
+```
+
+#### 3. 查看用户信息
+```bash
+curl http://localhost:3000/api/v1/users/USER1
+```
+
+#### 4. 查看扫描历史
+```bash
+curl http://localhost:3000/api/v1/scan/history/USER1
+```
+
+#### 5. 清空使用次数
+```bash
+curl -X POST http://localhost:3000/api/v1/users/USER1/reset-usage
+```
+
+**详细文档**: 查看 `SCAN_API_DOCUMENTATION.md`
 
 ## 🔧 常用命令
 
